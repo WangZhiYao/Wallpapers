@@ -6,15 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
+import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import space.levan.wallpapers.BaseFragment;
 import space.levan.wallpapers.R;
 
-public class ShareFragment extends Fragment {
+public class ShareFragment extends BaseFragment {
 
     private ShareViewModel shareViewModel;
 
