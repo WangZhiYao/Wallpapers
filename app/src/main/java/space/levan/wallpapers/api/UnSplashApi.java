@@ -6,7 +6,7 @@ import io.reactivex.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
-import space.levan.wallpapers.api.response.Photo;
+import space.levan.wallpapers.api.entity.Photo;
 
 /**
  * @author WangZhiYao
@@ -41,8 +41,8 @@ public interface UnSplashApi {
     /**
      * Retrieve a single random photo, given optional filters.
      *
-     * @param username    Limit selection to a single user.
      * @param query       Limit selection to photos matching a search term.
+     * @param username    Limit selection to a single user.
      * @param orientation Filter search results by photo orientation. Valid values are landscape, portrait, and squarish.
      * @param collections Public collection ID(‘s) to filter selection. If multiple, comma-separated
      * @param featured    Limit selection to featured photos.
@@ -50,8 +50,8 @@ public interface UnSplashApi {
      * @return
      */
     @GET("photos/random")
-    Single<Photo> getRandomPhoto(@Query("username") String username,
-                                 @Query("query") String query,
+    Single<Photo> getRandomPhoto(@Query("query") String query,
+                                 @Query("username") String username,
                                  @Query("orientation") String orientation,
                                  @Query("collections") String collections,
                                  @Query("featured") String featured,

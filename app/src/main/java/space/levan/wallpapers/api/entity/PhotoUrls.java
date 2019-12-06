@@ -1,4 +1,4 @@
-package space.levan.wallpapers.api.response;
+package space.levan.wallpapers.api.entity;
 
 /**
  * @author WangZhiYao

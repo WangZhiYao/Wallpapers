@@ -20,7 +20,7 @@ public class ApiManager {
     private static final long DEFAULT_WRITE_TIMEOUT = 10;
 
     private ApiManager() {
-        OkHttpClient httpClient = new OkHttpClient.Builder()
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(DEFAULT_CONNECT_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(DEFAULT_READ_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(DEFAULT_WRITE_TIMEOUT, TimeUnit.SECONDS)
@@ -30,7 +30,7 @@ public class ApiManager {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(UnSplashApi.BASE_URL)
-                .client(httpClient)
+                .client(okHttpClient)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
