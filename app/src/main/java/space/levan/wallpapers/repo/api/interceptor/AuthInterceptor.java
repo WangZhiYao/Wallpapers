@@ -1,4 +1,4 @@
-package space.levan.wallpapers.api;
+package space.levan.wallpapers.repo.api.interceptor;
 
 import androidx.annotation.NonNull;
 

@@ -1,4 +1,4 @@
-package space.levan.wallpapers.api;
+package space.levan.wallpapers.repo.api;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import io.reactivex.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
-import space.levan.wallpapers.api.entity.Photo;
+import space.levan.wallpapers.repo.api.entity.Photo;
 
 /**
  * @author WangZhiYao
@@ -56,5 +56,4 @@ public interface UnSplashApi {
                                  @Query("collections") String collections,
                                  @Query("featured") String featured,
                                  @Query("count") int count);
-
 }

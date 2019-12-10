@@ -1,4 +1,4 @@
-package space.levan.wallpapers.api.exception;
+package space.levan.wallpapers.repo.api.exception;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package space.levan.wallpapers.api;
+package space.levan.wallpapers.repo.api;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
@@ -10,8 +10,8 @@ import io.reactivex.disposables.Disposable;
 import okhttp3.ResponseBody;
 import retrofit2.HttpException;
 import retrofit2.Response;
-import space.levan.wallpapers.api.exception.ApiException;
-import space.levan.wallpapers.api.exception.ErrorResponse;
+import space.levan.wallpapers.repo.api.exception.ApiException;
+import space.levan.wallpapers.repo.api.exception.ErrorResponse;
 
 /**
  * @author WangZhiYao

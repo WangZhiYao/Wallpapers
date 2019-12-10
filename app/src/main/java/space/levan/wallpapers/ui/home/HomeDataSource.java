@@ -6,22 +6,22 @@ import androidx.paging.PageKeyedDataSource;
 import java.util.Collections;
 import java.util.List;
 
-import space.levan.wallpapers.api.ApiManager;
-import space.levan.wallpapers.api.ApiSubscriber;
-import space.levan.wallpapers.api.entity.Photo;
-import space.levan.wallpapers.api.exception.ApiException;
+import space.levan.wallpapers.repo.api.ApiManager;
+import space.levan.wallpapers.repo.api.ApiSubscriber;
+import space.levan.wallpapers.repo.api.entity.Photo;
+import space.levan.wallpapers.repo.api.exception.ApiException;
 import space.levan.wallpapers.utils.RxHelper;
 
 /**
  * @author WangZhiYao
  * @date 2019/12/6
  */
-public class HomeDataSource extends PageKeyedDataSource<Integer, Photo> {
+class HomeDataSource extends PageKeyedDataSource<Integer, Photo> {
 
     private int mPage;
     private String mOrderBy;
 
-    public HomeDataSource(int page, String orderBy) {
+    HomeDataSource(int page, String orderBy) {
         mPage = page;
         mOrderBy = orderBy;
     }
@@ -35,7 +35,7 @@ public class HomeDataSource extends PageKeyedDataSource<Integer, Photo> {
                     @Override
                     public void onSuccess(List<Photo> photos) {
                         if (photos != null && !photos.isEmpty()) {
-                            callback.onResult(photos, mPage--, mPage++);
+                            callback.onResult(photos, null, mPage + 1);
                         } else {
                             callback.onResult(Collections.emptyList(), null, null);
                         }
@@ -50,7 +50,7 @@ public class HomeDataSource extends PageKeyedDataSource<Integer, Photo> {
 
     @Override
     public void loadBefore(@NonNull LoadParams<Integer> params, @NonNull LoadCallback<Integer, Photo> callback) {
-        if (mPage <= 1) {
+        if (params.key <= 1) {
             callback.onResult(Collections.emptyList(), null);
             return;
         }

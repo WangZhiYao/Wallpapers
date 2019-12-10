@@ -4,18 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.paging.DataSource;
 import androidx.paging.PageKeyedDataSource;
 
-import space.levan.wallpapers.api.entity.Photo;
+import space.levan.wallpapers.repo.api.entity.Photo;
 
 /**
  * @author WangZhiYao
  * @date 2019/12/6
  */
-public class HomeDataSourceFactory extends PageKeyedDataSource.Factory<Integer, Photo> {
+class HomeDataSourceFactory extends PageKeyedDataSource.Factory<Integer, Photo> {
 
     private int mPage;
     private String mOrderBy;
 
-    public HomeDataSourceFactory(int page, String orderBy) {
+    HomeDataSourceFactory(int page, String orderBy) {
         mPage = page;
         mOrderBy = orderBy;
     }
