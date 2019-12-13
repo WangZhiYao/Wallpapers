@@ -2,6 +2,7 @@ package space.levan.wallpapers.utils;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
@@ -34,5 +35,10 @@ public class UIUtils {
         }
 
         return dm.heightPixels;
+    }
+
+    public static int dp2px(Context context, int dpVal) {
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                dpVal, context.getResources().getDisplayMetrics()));
     }
 }

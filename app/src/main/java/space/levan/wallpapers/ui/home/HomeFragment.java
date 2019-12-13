@@ -14,8 +14,11 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import space.levan.wallpapers.BaseFragment;
+import space.levan.wallpapers.App;
 import space.levan.wallpapers.R;
+import space.levan.wallpapers.ui.BaseFragment;
+import space.levan.wallpapers.ui.widgets.StaggeredGridItemDecoration;
+import space.levan.wallpapers.utils.UIUtils;
 
 public class HomeFragment extends BaseFragment {
 
@@ -54,6 +57,7 @@ public class HomeFragment extends BaseFragment {
     private void initView() {
         mSwipeRefresh.setEnabled(false);
         mRvPhotoList.setLayoutManager(new StaggeredGridLayoutManager(PHOTO_LIST_SPAN_COUNT, StaggeredGridLayoutManager.VERTICAL));
+        mRvPhotoList.addItemDecoration(new StaggeredGridItemDecoration(PHOTO_LIST_SPAN_COUNT, UIUtils.dp2px(App.getInstance(), 6)));
     }
 
     private void initData() {

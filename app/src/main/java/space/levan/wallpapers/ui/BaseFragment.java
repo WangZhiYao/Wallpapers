@@ -1,4 +1,4 @@
-package space.levan.wallpapers;
+package space.levan.wallpapers.ui;
 
 import androidx.fragment.app.Fragment;
 

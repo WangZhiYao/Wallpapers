@@ -1,4 +1,4 @@
-package space.levan.wallpapers;
+package space.levan.wallpapers.ui;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,6 +17,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import space.levan.wallpapers.R;
 
 public class MainActivity extends AppCompatActivity {
 

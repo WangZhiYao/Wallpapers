@@ -11,8 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import space.levan.wallpapers.BaseFragment;
 import space.levan.wallpapers.R;
+import space.levan.wallpapers.ui.BaseFragment;
 
 public class ToolsFragment extends BaseFragment {
 
