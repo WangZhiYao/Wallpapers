@@ -35,7 +35,7 @@ class HomeDataSource extends PageKeyedDataSource<Integer, Photo> {
                     @Override
                     public void onSuccess(List<Photo> photos) {
                         if (photos != null && !photos.isEmpty()) {
-                            callback.onResult(photos, null, mPage + 1);
+                            callback.onResult(photos, mPage - 1, mPage + 1);
                         } else {
                             callback.onResult(Collections.emptyList(), null, null);
                         }
